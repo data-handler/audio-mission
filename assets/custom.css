@@ -2,66 +2,76 @@
 
 /* Brand Colors */
 :root {
-  --primary-color: #2a4d69;   /* deep blue-grey */
-  --secondary-color: #4b86b4; /* softer accent blue */
-  --link-color: var(--secondary-color);
-  --background-color: #ffffff;
-  --text-color: #222;
+    --background-color: #ffffff;
+    /* clean white background */
+    --text-color: #222;
+    /* near-black for readability */
+    --primary-color: #1c1c1c;
+    /* strong black for headings */
+    --secondary-color: #555;
+    /* softer grey for subtext */
+    --link-color: #e63946;
+    /* red accent */
 }
 
 /* Dark mode tweaks */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #111;
-    --text-color: #ddd;
-    --primary-color: #9dc3e6;
-    --secondary-color: #6ea8dc;
-    --link-color: var(--secondary-color);
-  }
+    :root {
+        --background-color: #000;
+        --text-color: #eee;
+        --primary-color: #e63946;
+        /* red accent in dark mode */
+        --secondary-color: #888;
+        --link-color: #e63946;
+    }
 }
+
 
 /* Typography */
 body {
-  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background: var(--background-color);
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+header {
+    background: #1a1a1a;
 }
 
 /* Header */
 header h1 {
-  color: var(--primary-color);
-  font-weight: 700;
-  margin-bottom: 0.25em;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.25em;
 }
 
 header p {
-  font-size: 1.1em;
-  color: var(--secondary-color);
+    font-size: 1.1em;
+    color: var(--secondary-color);
 }
 
 /* Navigation */
 nav a {
-  text-decoration: none;
-  color: var(--link-color);
-  margin: 0 0.5em;
-  font-weight: 500;
+    text-decoration: none;
+    color: var(--link-color);
+    margin: 0 0.5em;
+    font-weight: 500;
 }
 
 nav a:hover {
-  text-decoration: underline;
+    color: #ff6b6b;
 }
 
 /* Footer */
 footer {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid #ccc;
-  font-size: 0.9em;
-  color: #666;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
 }
 
 footer a {
-  color: var(--link-color);
+    color: var(--link-color);
 }
-
