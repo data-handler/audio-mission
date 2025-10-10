@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,88 +35,332 @@
     <meta name="twitter:url" content="https://audio-mission.co.uk/">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/hero.css">
     <link rel="icon" href="./assets/images/favicon.png">
     <link rel="apple-touch-icon" href="./assets/images/favicon.png">
+
 </head>
 
-<header>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/docs">Build Notes</a>
-        <a href="/photos">Photos</a>
-        <a href="/about">About</a>
-    </nav>
+<body>
 
-    <img src="./assets/images/hero1.jpg" alt="AX-2 Clone Hero Image"
-        style="width:100%;max-height:400px;object-fit:cover;display:block;margin:0 auto 1.5rem auto;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,0.15);">
+    <header>
+        <div class="hero-container">
+            <img class="hero-img" src="./assets/images/hero2.jpg" alt="AX-2 Clone Hero Image">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container center">
+                <h1>Audio Mission - DIY AX-2 Clone Speaker Project</h1>
+                <p>Documenting the design, construction, and crossover of a DIY Audio Note AX-2 clone loudspeaker, with
+                    notes and photos for fellow audio enthusiasts.</p>
+            </div>
+        </div>
+    </header>
 
-    <h1>Audio Mission - DIY AX-2 Clone Speaker Project</h1>
-    <p>Documenting the design, construction, and crossover of a DIY Audio Note AX-2 clone loudspeaker, with notes and
-        photos for fellow audio enthusiasts.</p>
-</header>
+    <main class="container">
+        <aside class="note wip-note" data-theme="light">
+            <strong>Note:</strong> This website is a work in progress. To help
+            fellow builders get started quickly, only the build instructions are currently provided. More content and
+            details will be added as development continues.
+        </aside>
+        <section class="card guide" id="build-process">
+            <h2>Cabinet Dimensions &amp; Cutouts</h2>
+            <div class="dimensions">
+                <table role="grid">
+                    <thead>
+                        <tr>
+                            <th>Part</th>
+                            <th>Qty</th>
+                            <th>Size (mm)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>All panels</td>
+                            <td>—</td>
+                            <td>18mm Medite Premier MDF</td>
+                            <td>Pre-cut by <a href="https://www.cutmy.co.uk">CutMy (UK)</a>, incl. driver & terminal
+                                cutouts
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sides</td>
+                            <td>2</td>
+                            <td>376 x 230</td>
+                            <td>Ø145 @ (42,68) woofer • Ø71 @ (79,243) tweeter</td>
+                        </tr>
+                        <tr>
+                            <td>Top / Bottom</td>
+                            <td>4</td>
+                            <td>201 x 194</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Front / Back</td>
+                            <td>4</td>
+                            <td>376 x 201</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Rear panel</td>
+                            <td>2</td>
+                            <td>340 x 194</td>
+                            <td>75 x 75 cutout @ (59,75) terminal plate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<main>
-    <h2>Introduction</h2>
-    <p>
-        Welcome to <strong>Audio Mission</strong> — a documentation of my DIY
-        attempt at building an <em>Audio Note AX-2 clone</em>.
-        This site covers the design choices, construction process,
-        and lessons learned along the way.
-    </p>
+            <section class="card section-card" id="drivers">
+                <h2>Drivers</h2>
 
-    <h2>Design Notes</h2>
-    <p>
-        The project began with research into the original AX-2 design,
-        including cabinet dimensions, driver choices, and crossover topology.
-        Adjustments were made based on available components and materials.
-    </p>
-    <ul>
-        <li>Cabinet dimensions and materials</li>
-        <li>Drivers selected and alternatives</li>
-        <li>Initial crossover design</li>
-    </ul>
+                <p class="note">
+                    The original AX-2 used a Vifa C17 6½" poly-cone woofer and a Vifa D19 19 mm soft-dome tweeter.
+                    The C17 is long discontinued; variants appeared in many commercial speakers.
+                    For this build I sourced both drivers from a <em>Mission 761</em> (early–mid 1990s): a
+                    <strong>6 Ω</strong> Vifa C17 and a <strong>Vifa D19</strong> tweeter, whose voicing is very
+                    close to the AX-2’s unit.
+                </p>
 
-    <h2>Build Process</h2>
-    <p>
-        A step-by-step overview of how the cabinets were constructed and assembled.
-        Each stage is documented with notes and photographs.
-    </p>
-    <ol>
-        <li>Preparing the MDF panels</li>
-        <li>Cutting and assembling the enclosure</li>
-        <li>Internal bracing and damping</li>
-        <li>Finishing and veneer application</li>
-    </ol>
 
-    <h2>Crossover</h2>
-    <p>
-        The crossover was adapted from the original AX-2 design, with modifications
-        to suit the chosen drivers. This section covers the layout, soldering,
-        and testing of the crossover network.
-    </p>
-    <pre><code class="language-none">
-  <!-- Placeholder: you can drop a schematic image instead -->
-  Woofer LPF:  ...
-  Tweeter HPF: ...
-  </code></pre>
+                <div class="dimensions">
+                    <table role="grid">
+                        <thead>
+                            <tr>
+                                <th>Part</th>
+                                <th>Model / Type</th>
+                                <th>Source</th>
+                                <th>Nominal&nbsp;Z</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Woofer</td>
+                                <td>Vifa C17 (17 cm poly-cone)</td>
+                                <td>Pair pulled from Mission 761</td>
+                                <td>6 Ω</td>
+                                <td>AX-2 used an 8 Ω C17; low-pass re-tuned for 6 Ω.</td>
+                            </tr>
+                            <tr>
+                                <td>Tweeter</td>
+                                <td>Vifa D19 (19 mm soft dome)</td>
+                                <td>Pulled from Mission 761</td>
+                                <td>~8 Ω (varies by variant)</td>
+                                <td>Very similar character to the AX-2 tweeter.</td>
+                            </tr>
 
-    <h2>Photos</h2>
-    <p>A selection of images showing the project from start to finish.</p>
-    <img src="./assets/images/build_stage1.jpg" alt="AX-2 clone build - cabinet assembly">
-    <img src="./assets/images/build_stage2.jpg" alt="AX-2 clone build - crossover wiring">
+                        </tbody>
+                    </table>
+                </div>
 
-    <h2>Reflections</h2>
-    <p>
-        Final thoughts on the outcome: how the speakers sound, what worked well,
-        and what I would approach differently in a future build.
-    </p>
-</main>
+                <div class="note" style="margin-top:.75rem">
+                    <strong>Why the 6 Ω woofer matters:</strong>
+                    A 6 Ω C17 raises the low-pass corner with the same inductor and changes level balance…
+                </div>
 
-<footer>
-    <p>Audio Mission – documenting the AX-2 clone build.</p>
-    <small>© 2025 Nick Adkinson</small>
-    <p>Template adapted from <a href="https://github.com/MarketingPipeline/Simply-Docs">Simply-Docs</a> (MIT License).
-    </p>
-</footer>
+                <!-- Optional: photos of your original AX-2 pair (before/after veneer) -->
+                <!--
+  <div class="media-grid" style="margin-top:.75rem">
+    <figure>
+      <a class="lb-link" href="./assets/images/ax2-original-before.jpg">
+        <img src="./assets/images/ax2-original-before.jpg" alt="Original AX-2 with factory wrap">
+      </a>
+      <figcaption>Original AX-2 (factory oak wrap)</figcaption>
+    </figure>
+    <figure>
+      <a class="lb-link" href="./assets/images/ax2-original-after.jpg">
+        <img src="./assets/images/ax2-original-after.jpg" alt="AX-2 re-veneered in real oak">
+      </a>
+      <figcaption>Re-veneered in real oak</figcaption>
+    </figure>
+  </div>
+  -->
+            </section>
+
+
+            <h2>Build Process</h2>
+            <ol class="steps">
+                <li class="step">
+                    <header>
+                        <h3>Dry-fit & glue the cabinets</h3>
+                    </header>
+                    <p>Test-fit pre-cut panels (butt joints). Glue with Titebond II, clamp square, and let each glue-up
+                        cure ~24 h before the next.</p>
+                    <div class="media-grid">
+                        <figure><a href="./assets/images/wood.jpg">
+                                <img src="./assets/images/wood.jpg" alt="Top: positioning">
+                            </a>
+                            <figcaption>Pre-cut panels laid out</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/clamps 1.jpg">
+                                <img src="./assets/images/clamps 1.jpg" alt="Clamped glue-up">
+                            </a>
+                            <figcaption>Clamping</figcaption>
+                        </figure>
+                    </div>
+                    <p class="note"><strong>Tip:</strong> Check diagonals for square before tightening clamps.</p>
+                </li>
+
+                <li class="step">
+                    <header>
+                        <h3>Driver rebates & edge prep</h3>
+                    </header>
+                    <p>Rout driver rebates with a rabbet/router circle jig. Break sharp edges on the baffle (1/2 inch
+                        round-over) and sand to 180-220 grit.</p>
+                    <div class="media-grid">
+                        <figure><a href="./assets/images/glue-up-complete.JPEG">
+                                <img src="./assets/images/glue-up-complete.JPEG" alt="Finished glue-up">
+                            </a>
+                            <figcaption>Finished glue-up</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <header>
+                        <h3>Veneer the baffle first</h3>
+                    </header>
+                    <p>Roll a thin, even Titebond coat on both baffle and veneer. Flash off ~20 min, position, then iron
+                        on through baking paper.</p>
+                    <div class="media-grid">
+                        <figure><a href="./assets/images/matched veneer sheets.JPEG">
+                                <img src="./assets/images/matched veneer sheets.JPEG" alt="Matched veneer">
+                            </a>
+                            <figcaption>Matched sheets</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/veneer-top-1.jpg">
+                                <img src="./assets/images/veneer-top-1.jpg" alt="Veneer process">
+                            </a>
+                            <figcaption>Top: positioning</figcaption>
+                        </figure>
+                    </div>
+                    <p class="note"><strong>Check:</strong> Work from center out; reheat any dull spots to re-activate
+                        glue.</p>
+                </li>
+
+                <li class="step">
+                    <header>
+                        <h3>Veneer remaining faces</h3>
+                    </header>
+                    <p>Repeat for sides, top, bottom, then back. Trim with a sharp knife/flush-trim bit and sand
+                        lightly.</p>
+                    <div class="media-grid">
+                        <figure><a href="./assets/images/veneer-top-2.jpg">
+                                <img src="./assets/images/veneer-top-2.jpg" alt="Veneer process">
+                            </a>
+                            <figcaption>Iron-on method</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/veneer-top-3.jpg">
+                                <img src="./assets/images/veneer-top-3.jpg" alt="Trimming veneer">
+                            </a>
+                            <figcaption>Trim flush</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/veneer-top-4.jpg">
+                                <img src="./assets/images/veneer-top-4.jpg" alt="Further veneering">
+                            </a>
+                            <figcaption>Work in pairs</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/veneer-top-5.jpg">
+                                <img src="./assets/images/veneer-top-5.jpg" alt="Finished top veneer">
+                            </a>
+                            <figcaption>Clean edges</figcaption>
+                        </figure>
+                    </div>
+                    <p class="note"><strong>Order & grain plan:</strong> I veneered the <em>front (baffle) first</em>,
+                        then the
+                        <em>top</em> so the grain flows continuously over the front edge. Next, I did the <em>sides</em>
+                        aiming to
+                        wrap the grain seamlessly around the cabinet. Finally, I veneered the <em>bottom</em> and
+                        <em>rear</em>. This sequence hides most seams and keeps the most visible faces (front/top)
+                        perfectly aligned.
+                    </p>
+
+                </li>
+
+                <li class="step">
+                    <header>
+                        <h3>Cut openings after veneer</h3>
+                    </header>
+                    <p>From the front, cut out driver holes - I used a stanley knife. From the rear, clean the
+                        terminal-plate opening.</p>
+                    <div class="media-grid">
+                        <figure><a href="./assets/images/raw veneer baffle.jpg">
+                                <img src="./assets/images/raw veneer baffle.jpg" alt="Raw veneered baffle">
+                            </a>
+                            <figcaption>Driver holes cut out</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <li class="step">
+                    <header>
+                        <h3>Finish prep</h3>
+                    </header>
+                    <p>Final sand to 240-320 grit. Raise grain if using water-based finish; de-nib, then apply your
+                        chosen oil/lacquer. I used OSMO Polyx Oil Clear Satin.</p>
+                    <div class="media-grid">
+                        <figure><a href="./assets/images/IMG_7639.jpg">
+                                <img src="./assets/images/IMG_7639.jpg" alt="After oiling with OSMO">
+                            </a>
+                            <figcaption>After oiling with OSMO</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/IMG_7646.jpg">
+                                <img src="./assets/images/IMG_7646.jpg" alt="After oiling with OSMO">
+                            </a>
+                            <figcaption>After oiling with OSMO</figcaption>
+                        </figure>
+                        <figure><a href="./assets/images/IMG_7643.jpg">
+                                <img src="./assets/images/IMG_7643.jpg" alt="After oiling with OSMO">
+                            </a>
+                            <figcaption>After oiling with OSMO</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>Audio Mission - documenting the AX-2 clone build.</p>
+            <small>© 2025 Nick Adkinson</small>
+            <p>Template adapted from <a href="https://github.com/MarketingPipeline/Simply-Docs">Simply-Docs</a> (MIT
+                License).</p>
+        </div>
+    </footer>
+    <!-- Lightbox -->
+    <div id="lb" aria-hidden="true" role="dialog"
+        style="position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.75);z-index:9999;">
+        <button id="lbClose" aria-label="Close" style="position:absolute;top:1rem;right:1rem;border:0;
+          background:#fff;padding:.4rem .6rem;border-radius:.4rem;cursor:pointer;"><svg width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="display:block">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg></button>
+        <img id="lbImg" alt=""
+            style="max-width:92vw;max-height:88vh;border-radius:.4rem;box-shadow:0 8px 30px rgba(0,0,0,.4);" />
+    </div>
+
+    <script>
+        (function () {
+            const lb = document.getElementById('lb');
+            const img = document.getElementById('lbImg');
+            const close = () => { lb.style.display = 'none'; lb.setAttribute('aria-hidden', 'true'); img.src = ''; };
+            document.addEventListener('click', e => {
+                const a = e.target.closest('.media-grid a'); if (!a) return;
+                e.preventDefault(); img.src = a.getAttribute('href'); lb.style.display = 'grid'; lb.removeAttribute('aria-hidden');
+            });
+            document.getElementById('lbClose').addEventListener('click', close);
+            lb.addEventListener('click', e => { if (e.target === lb) close(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+        })();
+    </script>
+
+</body>
+
+</html>
